@@ -1,0 +1,268 @@
+body {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  border: 1px solid transparent;
+  padding: 0.8em 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1em;
+  background: linear-gradient(90deg, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  color: #fff;
+  font-size: 0.7em;
+}
+.btn:focus {
+  border: 1px solid hsl(233deg, 13%, 49%);
+  background: inherit;
+  color: hsl(233deg, 13%, 49%);
+  cursor: pointer;
+}
+
+.card, .card--highlight {
+  color: hsl(233deg, 13%, 49%);
+  line-height: 3em;
+}
+
+.card, .card--highlight {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+  min-width: 300px;
+}
+.card .option__price, .card--highlight .option__price {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: hsl(232deg, 13%, 33%);
+  padding: 20px 0;
+}
+.card .option__price .dollar, .card--highlight .option__price .dollar {
+  font-size: 50%;
+  padding-right: 0.1em;
+}
+.card div, .card--highlight div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card div:not(.dollar), .card--highlight div:not(.dollar),
+.card .option__price,
+.card--highlight .option__price {
+  border-bottom: 1px solid hsl(234deg, 14%, 74%);
+}
+.card .btn, .card--highlight .btn {
+  margin-top: 2em;
+  width: 100%;
+}
+.card .monthly, .card--highlight .monthly {
+  display: none;
+}
+@media (min-width: 1440px) {
+  .card, .card--highlight {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+.card--highlight {
+  background: linear-gradient(to bottom, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  color: hsl(240deg, 78%, 98%);
+}
+.card--highlight .option__price {
+  color: hsl(240deg, 78%, 98%);
+}
+.card--highlight .btn {
+  background: hsl(240deg, 78%, 98%);
+  color: hsl(233deg, 13%, 49%);
+}
+.card--highlight .btn:focus {
+  border: 1px solid hsl(240deg, 78%, 98%);
+  background: hsl(237deg, 63%, 64%);
+  color: hsl(240deg, 78%, 98%);
+  cursor: pointer;
+}
+@media (min-width: 1440px) {
+  .card--highlight {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+
+.toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  transition: background-color ease 0.3s;
+}
+.toggle::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: hsl(240deg, 78%, 98%);
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+.toggle:checked:before {
+  left: 32px;
+}
+
+body {
+  background: url("/images/bg-top.svg") right top, url("/images/bg-bottom.svg") left bottom, hsl(240deg, 78%, 98%);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  body {
+    height: 100vh;
+  }
+}
+
+.container {
+  margin: 0 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: fit-content;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .options {
+    flex-direction: row;
+  }
+}
+
+.pricing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 2em;
+  max-width: 300px;
+}
+.pricing h1 {
+  width: 100%;
+  text-align: center;
+  color: hsl(233deg, 13%, 49%);
+  font-size: 1.75rem;
+  padding: 2em 0;
+}
+.pricing span {
+  color: hsl(234deg, 14%, 74%);
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .pricing {
+    margin: 0;
+    max-width: 50%;
+  }
+  .pricing h1 {
+    padding-top: 0;
+  }
+  .pricing span {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

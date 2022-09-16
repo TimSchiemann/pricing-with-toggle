@@ -1,0 +1,80 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+%card-typography {
+  color: a.$gray-blue;
+  line-height: 3em;
+}
+
+.card {
+  @extend %card-typography;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+  min-width: 300px;
+
+  .option__price {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: a.$gray-blue-4;
+    padding: 20px 0;
+    .dollar {
+      font-size: 50%;
+      padding-right: 0.1em;
+    }
+  }
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  div:not(.dollar),
+  .option__price {
+    border-bottom: 1px solid a.$gray-blue-2;
+  }
+
+  .btn {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  .monthly {
+    display: none;
+  }
+
+  
+  @include a.desktop {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  &--highlight {
+    @extend .card;
+    background: linear-gradient(to bottom, a.$primary);
+    color: a.$gray-blue-1;
+    .option__price {
+      color: a.$gray-blue-1;
+    }
+    .btn {
+      background: a.$gray-blue-1;
+      color: a.$gray-blue;
+
+      &:focus {
+        border: 1px solid a.$gray-blue-1;
+        background: hsl(237, 63%, 64%);
+        color: a.$gray-blue-1;
+        cursor: pointer;
+      }
+    }
+    @include a.desktop(){
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+  }
+}
